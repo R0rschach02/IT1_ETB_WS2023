@@ -22,6 +22,11 @@ int main(void)
 			{
 				printf(" \t");
 			}
+
+		for (einruecken = zeichen += einruecken; einruecken < zeichen; einruecken++)
+		{
+			printf(" \t");
+		}
 		
 	}
 
