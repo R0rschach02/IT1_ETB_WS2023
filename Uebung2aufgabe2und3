@@ -1,1 +1,30 @@
+/****************************************************************
+* Dateiname: QuelleUebung2.c
+* Beschreibung: IT1 Übungsblatt 2 Aufgabe 2 und 3
+* Autor: Igor Jovicic
+* Datum: 13.10.2022
+* Version: 1.0
+*****************************************************************/
 
+
+#include <stdio.h>	// Standard Eingabe/Ausgabe Funktionen
+
+
+int main(void)
+{
+	//float volumen = 4.0f / 3.0f * 3.14159f * 10 * 10 * 10; 
+
+	//printf("Das Volumen einer Kugel mit Radius r=10 m ist %0.2f m3", volumen); 
+
+	float radius = 0; 
+
+	printf("Radius in m eingeben: ");
+
+	scanf_s(" %0.2f", radius);
+
+	float ergebnisVolumen = 4.0f / 3.0f * 3.14159f * radius * radius * radius;
+
+	printf("Das Volumen einer Kugel mit Radius r = %0.2f ist %0.2f m3", radius, ergebnisVolumen);
+
+	return 0;
+}
