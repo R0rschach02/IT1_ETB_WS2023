@@ -1,6 +1,6 @@
 /****************************************************************
 * Dateiname: QuelleUebung2.c
-* Beschreibung: IT1 Übungsblatt 2 Aufgabe 1
+* Beschreibung: IT1 Ãœbungsblatt 2 Aufgabe 1
 * Autor: Igor Jovicic
 * Datum: 06.10.2022
 * Version: 1.0
@@ -9,27 +9,31 @@
 
 #include <stdio.h>	// Standard Eingabe/Ausgabe Funktionen
 
+int zeichen;
+int einruecken;
+
 int main(void)
 {
-	int zeichen;
-	int einruecken;
+	
 
-	for (zeichen = 0; zeichen <= 2; zeichen++)
+	for (zeichen = 0; zeichen <= 8; zeichen++)
 	{
-		printf(" test \t \n");
+		
 
-		if ( zeichen > 1 )
-			{
-				printf(" \t");
-			}
+		printf(" *  \n");
 
-		for (einruecken = zeichen += einruecken; einruecken < zeichen; einruecken++)
+		if (zeichen > 2)
 		{
-			printf(" \t");
+			printf(" ");
+		}
+
+		
+		for (einruecken = 0; einruecken < zeichen; einruecken++)
+		{
+			printf("  ");
 		}
 		
 	}
 
 	return 0;
 }
-
