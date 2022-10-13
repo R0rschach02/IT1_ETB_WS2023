@@ -12,19 +12,20 @@
 
 int main(void)
 {
-	//float volumen = 4.0f / 3.0f * 3.14159f * 10 * 10 * 10; 
 
-	//printf("Das Volumen einer Kugel mit Radius r=10 m ist %0.2f m3", volumen); 
+	float radius = 0.0; // Initialisierung der Variable radius um in der folgenden Eingabe den Wert einlesen und speichern zu können. 
 
-	float radius = 0; 
+	printf("Radius in m eingeben: "); // Hier erscheint eine Beschreibung der Eingabe 
 
-	printf("Radius in m eingeben: ");
+	scanf_s(" %f", &radius); // Der Wert der hier eingelesen wird ist vom Datentyp Float, die Funktion speichert den eingelesenen Wert in der hinterlegten Speicheradresse der Variable radius. 
 
-	scanf_s(" %0.2f", radius);
+	printf(" \n"); // Dient zur besseren Übersicht der Ausgaben in der Konsole 
 
-	float ergebnisVolumen = 4.0f / 3.0f * 3.14159f * radius * radius * radius;
+	float ergebnisVolumen = 4.0f / 3.0f * 3.14159f * radius * radius * radius; // Formel zur Berechnung des Volumens einer Kugel mitsamt eingegebenem Radius vom Benutzer. 
 
-	printf("Das Volumen einer Kugel mit Radius r = %0.2f ist %0.2f m3", radius, ergebnisVolumen);
+	printf("Das Volumen einer Kugel mit Radius r=%0.2f m ist %0.2f m3", radius, ergebnisVolumen); // Textausgabe mit formatierten Radius und dem Ergebnis. 
 
-	return 0;
+	printf(" \n"); // Dient zur besseren Übersicht der Ausgaben in der Konsole 
+
+	return 0; // Beendet die Funktion 
 }
