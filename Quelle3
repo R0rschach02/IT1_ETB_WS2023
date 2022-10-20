@@ -1,0 +1,57 @@
+/****************************************************************
+* Dateiname: Quelle3.c
+* Beschreibung: IT1 Übungsblatt 3 Aufgabe 2
+* Autor: Igor Jovicic
+* Datum: 20.10.2022
+* Version: 1.0
+*****************************************************************/
+
+
+#include <stdio.h>	// Standard Eingabe/Ausgabe Funktionen
+
+
+int main(void)
+{
+
+	int stueckzahl = 0; // Initialisierung der Variable radius um in der folgenden Eingabe den Wert einlesen und speichern zu können. 
+
+	float stueckpreis = 0.0; 
+
+	char kaufdatum[12];
+
+	printf("Eingabe Stueckzahl: "); 
+
+	scanf_s(" %3i", &stueckzahl); 
+
+	printf(" \n");  
+
+	printf("Eingabe Stueckpreis: ");
+
+	scanf_s(" %f", &stueckpreis);
+
+	printf(" \n");
+
+	printf("Eingabe Kaufdatum (dd/mm/yyyy): ");
+
+	scanf_s(" %s", kaufdatum);
+
+	printf(" \n");
+
+	printf(" Stueckzahl \t"); 
+
+	printf(" Stueckpreis \t");
+
+	printf(" Kaufdatum \t");
+
+	printf(" \n"); 
+
+	printf(" %d \t" , stueckzahl);
+
+	printf(" EUR %0.2f \t " , stueckpreis);
+
+	printf(" %s \t ", kaufdatum);
+
+	printf(" \n");
+
+	return 0; // Beendet die Funktion 
+}
