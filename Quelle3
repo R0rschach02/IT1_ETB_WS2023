@@ -21,7 +21,7 @@ int main(void)
 
 	printf("Eingabe Stueckzahl: "); 
 
-	scanf_s(" %3i", &stueckzahl); 
+	scanf_s(" %d", &stueckzahl); 
 
 	printf(" \n");  
 
@@ -45,11 +45,11 @@ int main(void)
 
 	printf(" \n"); 
 
-	printf(" %d \t" , stueckzahl);
+	printf(" %d \t \t" , stueckzahl);
 
-	printf(" EUR %0.2f \t " , stueckpreis);
+	printf(" EUR %2.2f \t  " , stueckpreis);
 
-	printf(" %s \t ", kaufdatum);
+	printf(" %s  ", kaufdatum);
 
 	printf(" \n");
 
