@@ -2,7 +2,7 @@
 * Dateiname: Quelle3.c
 * Beschreibung: IT1 Übungsblatt 3 Aufgabe 2
 * Autor: Igor Jovicic
-* Datum: 20.10.2022
+* Datum: 22.10.2022
 * Version: 1.0
 *****************************************************************/
 
@@ -12,9 +12,13 @@
 int main(void)
 {
 
-	int stueckzahl = 0; // Initialisierung der Variable radius um in der folgenden Eingabe den Wert einlesen und speichern zu können. 
+	
 
-	float stueckpreis = 0.0; 
+	int stueckzahl = 0; // initialisierung der Variable 
+
+	float stueckpreis = 0.0;
+
+	float MaxStueckpreis = 9999.99; 
 
 	char kaufdatum[12];
 
@@ -32,33 +36,29 @@ int main(void)
 
 	printf("Eingabe Kaufdatum (dd/mm/yyyy): ");
 
-	scanf_s(" %12s", kaufdatum, 12);
+	scanf_s(" %12s", kaufdatum, 12); // Beim einlesen des Strings muss spezifisch angegeben werden wie viel Platz im Array benötigt wird 
 
 	printf(" \n");
 
-	/*
-	if (stueckpreis >= 10000.00)
+	printf("Stueckzahl \t Stueckpreis \t Kaufdatum \t ");
 
-	{
-		printf(" Bitte geben sie einen geringeren Wert ein! ");
-	}
-	*/
+	printf(" \n");
 
-	/*
-	else
-	{
 
-	*/
+	if (stueckpreis > 9999.99) // Dient zur kontrollierten Ausgabe des maximalen Preises. 
+		{
+			printf("%-d \t \t EUR %4.2f \t %-s \t ", stueckzahl, MaxStueckpreis, kaufdatum);
+		
+			printf(" \n");
+		}
 
-		printf("Stueckzahl \t Stueckpreis \t Kaufdatum \t ");
+	else   
+		{
+			printf("%-d \t \t EUR %4.2f \t %-s \t ", stueckzahl, stueckpreis, kaufdatum);  
 
-		printf(" \n");
+			printf(" \n");
+		}
 
-		printf("%d \t \t EUR %4.2f \t %s \t ", stueckzahl, stueckpreis, kaufdatum);
-
-		printf(" \n");
-
-	//}
 
 	return 0; // Beendet die Funktion 
 }
