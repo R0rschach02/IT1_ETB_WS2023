@@ -1,0 +1,50 @@
+/****************************************************************
+* Dateiname: Quelle3.c
+* Beschreibung: IT1 Übungsblatt 4 Aufgabe 4
+* Autor: Igor Jovicic
+* Datum: 22.10.2022
+* Version: 1.0
+*****************************************************************/
+
+#include <stdio.h>	// Standard Eingabe/Ausgabe Funktionen
+
+
+int main(void)
+{
+
+	int dezimal = 0; 
+
+	printf("Zahl zwischen 0 und 32767 eingeben: ");
+
+	printf(" \n");
+
+	scanf_s(" %d", &dezimal); 
+	
+	if (dezimal % 8 > 0)
+	{
+		int oktalWert1 = dezimal / 8; // erste division mit 8, muss wieder verwendet werden in abfrage zur berechnung des nächsten Oktalwerts 
+
+		int oktalWert2 = oktalWert1 / 8; // erste stelle berechnen
+
+		if ( oktalWert1 % 8 > 0)
+		{
+			int oktalWert3 = (dezimal / 8) % 8; // zweite stelle berechnen 
+
+			if (oktalWert2 % 8 > 0) // zweite division mit 8, muss wieder verwendet werden in abfrage zur berechnung des nächsten Oktalwerts
+			{
+				int oktalWert4 = dezimal % 8; // dritte stelle berechnen
+
+
+			}
+		}
+	}
+
+	else 
+
+	
+
+	printf("Im Oktalsystem: %d%d%d",oktalWert2, oktalWert3, oktalWert4);
+
+	return 0;
+
+} 
