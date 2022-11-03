@@ -1,0 +1,60 @@
+/****************************************************************
+* Dateiname: Quelle5.c
+* Beschreibung: IT1 Übungsblatt 5 Aufgabe 3
+* Autor: Igor Jovicic
+* Datum: 03.11.2022
+* Version: 1.0
+*****************************************************************/
+
+#include <stdio.h>	// Standard Eingabe/Ausgabe Funktionen
+
+
+int main(void)
+{
+	int wert1;
+
+	int wert2;
+
+	int wert3;
+
+	int wert4;
+
+	int maxVal; 
+
+	int minVal;
+
+	printf("Vier ganze Zahlen eingeben: ");
+
+	printf(" \n");
+
+	scanf_s(" %d %d %d %d", &wert1, &wert2, &wert3, &wert4);
+
+	if (wert1 > wert2 || wert1 > wert3 || wert1 > wert4 )
+
+	{
+		maxVal = wert1;
+	}
+
+	if (wert2 > wert1 || wert2 > wert3 || wert2 > wert4)
+
+	{
+		maxVal = wert2;
+	}
+
+
+	if (wert3 > wert1 || wert3 > wert2 || wert3 > wert4)
+
+	{
+		maxVal = wert3;
+	}
+
+	if (wert4 > wert1 || wert4 > wert2 || wert4 > wert1)
+
+	{
+		maxVal = wert4;
+	}
+
+	printf("Groesster Wert %d", maxVal);
+
+	return 0; 
+}
