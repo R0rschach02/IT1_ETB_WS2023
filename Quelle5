@@ -2,7 +2,7 @@
 * Dateiname: Quelle5.c
 * Beschreibung: IT1 Übungsblatt 5 Aufgabe 3
 * Autor: Igor Jovicic
-* Datum: 03.11.2022
+* Datum: 06.11.2022
 * Version: 1.0
 *****************************************************************/
 
@@ -11,17 +11,7 @@
 
 int main(void)
 {
-	int wert1;
-
-	int wert2;
-
-	int wert3;
-
-	int wert4;
-
-	int maxVal; 
-
-	int minVal;
+	int wert1, wert2, wert3, wert4;
 
 	printf("Vier ganze Zahlen eingeben: ");
 
@@ -29,32 +19,40 @@ int main(void)
 
 	scanf_s(" %d %d %d %d", &wert1, &wert2, &wert3, &wert4);
 
-	if (wert1 > wert2 || wert1 > wert3 || wert1 > wert4 )
+	int max1 = wert1, min1 = wert2, min2 = wert3, max2 = wert4; 
+	// Dadurch das bereits jeweils 2 maximal und 2 minimal werte festgelegt wurden, müssen diese 
+	// dann nur mit jeweils einer if abfrage überprüft werden. 
 
+	if (wert1 <= wert2) 	
 	{
-		maxVal = wert1;
+		max1 = wert2; 
+		min1 = wert1; 
 	}
 
-	if (wert2 > wert1 || wert2 > wert3 || wert2 > wert4)
-
+	if (wert3 >= wert4) 
 	{
-		maxVal = wert2;
+		max2 = wert3; 
+		min2 = wert4; 
 	}
 
+	// Vorerst wird davon ausgegangen das wir den kleinsten und größten Wert festgelegt haben. 
+	// Es werden auch gleich große Werte bei der Eingabe berücksichtigt und verglichen.
 
-	if (wert3 > wert1 || wert3 > wert2 || wert3 > wert4)
-
+	if (max2 < max1) 
 	{
-		maxVal = wert3;
+		max2 = max1; 
 	}
 
-	if (wert4 > wert1 || wert4 > wert2 || wert4 > wert1)
-
+	if (min2 > min1) 
 	{
-		maxVal = wert4;
+		min2 = min1;
 	}
 
-	printf("Groesster Wert %d", maxVal);
+	printf("Groesster Wert: %d", max2);
 
-	return 0; 
+	printf("\n");
+
+	printf("Kleinster Wert: %d", min2);
+
+	return 0;
 }
