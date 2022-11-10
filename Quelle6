@@ -1,0 +1,41 @@
+/****************************************************************
+* Dateiname: Quelle6.c
+* Beschreibung: IT1 Übungsblatt 6 Aufgabe 3
+* Autor: Igor Jovicic
+* Datum: 10.11.2022
+* Version: 1.0
+*****************************************************************/
+
+#include <stdio.h>	// Standard Eingabe/Ausgabe Funktionen
+
+
+int main(void)
+{
+	int nenner, zaehler; 
+
+	int ggt2;
+
+	printf("Bruch eingeben: ");
+
+	printf(" \n");
+
+	scanf_s(" %d %d ", &zaehler, &nenner);
+
+	//euklidischer Algorithmus
+
+	while (nenner != 0)
+	{
+		ggt2 = zaehler % nenner; // 30 % 3 
+
+		zaehler = nenner;  // zaehler = 3 
+
+		nenner = ggt2; // nenner = 0 
+	}
+
+
+	//int ggt = zaehler / nenner; 
+
+	printf("Gekuerzt: %d / %d", zaehler, nenner);
+
+	return 0;
+}
