@@ -1,6 +1,6 @@
 /****************************************************************
 * Dateiname: Quelle6.c
-* Beschreibung: IT1 Übungsblatt 6 Aufgabe 3
+* Beschreibung: IT1 �bungsblatt 6 Aufgabe 3
 * Autor: Igor Jovicic
 * Datum: 10.11.2022
 * Version: 1.0
@@ -8,34 +8,70 @@
 
 #include <stdio.h>	// Standard Eingabe/Ausgabe Funktionen
 
+#include <time.h>
 
 int main(void)
 {
-	int nenner, zaehler; 
+	
+	int nenner, zaehler;
 
-	int ggt2;
+	int ggt;
 
-	printf("Bruch eingeben: ");
+	int max, min;
 
-	printf(" \n");
+	printf("Bruch eingeben: \n");
 
-	scanf_s(" %d %d ", &zaehler, &nenner);
+	scanf_s("%d/%d", &zaehler, &nenner); 
 
-	//euklidischer Algorithmus
-
-	while (nenner != 0)
+	if (nenner == zaehler) // für brüche wie 10/10 
 	{
-		ggt2 = zaehler % nenner; // 30 % 3 
-
-		zaehler = nenner;  // zaehler = 3 
-
-		nenner = ggt2; // nenner = 0 
+		printf("Gekuerzt: %d/%d", zaehler/zaehler, nenner/nenner);
 	}
 
+	if (nenner > zaehler) 
+	{
+		ggt = nenner % zaehler; 
+		max = nenner;
+		min = zaehler;
 
-	//int ggt = zaehler / nenner; 
+		if (ggt != 0)
+		{
+			zaehler = zaehler / ggt;
+			nenner = nenner / ggt;
+			printf("Gekuerzt: %d/%d", zaehler, nenner);
+		}
 
-	printf("Gekuerzt: %d / %d", zaehler, nenner);
+		else if (ggt == 0)
+		{
+			max = max / min;
+			min = min / min;
+			printf("Gekuerzt: %d/%d", min, max);
+
+		}
+	}
+
+	else if (nenner < zaehler)
+	{
+		ggt = zaehler % nenner;
+		max = zaehler;
+		min = nenner;
+
+		if (ggt != 0)
+		{
+			zaehler = zaehler / ggt;
+			nenner = nenner / ggt;
+			printf("Gekuerzt: %d/%d", zaehler, nenner);
+		}
+
+		else if (ggt == 0)
+		{
+			max = max / min; // bspw fuer faelle wie 66/33 
+			min = min / min;
+			printf("Gekuerzt: %d/%d", max, min);
+
+		}
+
+	}
 
 	return 0;
 }
