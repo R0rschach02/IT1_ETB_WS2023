@@ -1,0 +1,31 @@
+/****************************************************************
+* Dateiname: Quelle7.c
+* Beschreibung: IT1 Uebungsblatt 7 Aufgabe 1
+* Autor: Igor Jovicic
+* Datum: 17.11.2022
+* Version: 1.0
+*****************************************************************/
+
+#include <stdio.h>	// Standard Eingabe/Ausgabe Funktionen
+
+#include <time.h>
+
+int main(void)
+{
+	unsigned short wert = 10; 
+
+	scanf_s("%hu", &wert);
+
+	printf("Quadratzahlen Tabelle \n");
+
+	printf("Eingabe Anzahl Eintraege: %hu", wert); 
+
+	for (unsigned short i = 0; i >= wert; i++)
+	{
+		wert* wert;
+		printf("%hu \tt")
+
+	}
+
+	return 0;
+}
