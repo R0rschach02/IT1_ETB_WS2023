@@ -12,20 +12,22 @@
 
 int main(void)
 {
-	unsigned short wert = 10; 
+	unsigned short wert;
+
+	unsigned short i;
+	printf("Quadratzahlen Tabelle \n");
+
+	printf("Eingabe Anzahl Eintraege: ");
 
 	scanf_s("%hu", &wert);
 
-	printf("Quadratzahlen Tabelle \n");
-
-	printf("Eingabe Anzahl Eintraege: %hu", wert); 
-
-	for (unsigned short i = 0; i >= wert; i++)
+	for (i = 1; i <= wert; i++)
 	{
-		wert* wert;
-		printf("%hu \tt")
+		
+		printf("%10hu %10hu\n", i, i*i);
 
 	}
+
 
 	return 0;
 }
