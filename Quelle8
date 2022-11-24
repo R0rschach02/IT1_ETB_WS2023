@@ -1,0 +1,34 @@
+/****************************************************************
+* Dateiname: Quelle8.c
+* Beschreibung: IT1 Uebungsblatt 8 Aufgabe 2
+* Autor: Igor Jovicic
+* Datum: 17.11.2022
+* Version: 1.0
+*****************************************************************/
+
+#include <stdio.h>	// Standard Eingabe/Ausgabe Funktionen
+
+#include <time.h>
+
+#define N 5 // Verwendung von Macros 
+
+int main(void)
+{
+	int z1[N][N];
+
+	int sum1_c, sum2_c, sum3_c, sum4_c, sum5_c; // zeilen bzw. columns 
+
+	int sum1_r, sum2_r, sum3_r, sum4_r, sum5_r; // spalten bzw. rows
+
+	printf("Zeile 1 eingeben: "); 
+
+	for (int zeile = 0; zeile < N; zeile++) // Schleife für das iterieren innerhalb der Zeilen
+	{
+		for( int spalte = 0; spalte < N; spalte++) // Schleife für das iterieren innerhalb der Spalten
+		{
+			// Schleife für das iterieren innerhalb der Zeilen
+		}
+	}
+
+	return 0;
+}
