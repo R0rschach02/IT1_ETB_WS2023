@@ -8,36 +8,49 @@
 
 #include <stdio.h>	// Standard Eingabe/Ausgabe Funktionen
 #define N 5 // Verwendung von Macros 
-#include <time.h>
-
-
 
 int main(void)
 {
-	int matrix[N][N] = 0;
+	
+	int matrix[N][N];
 
-	int sum_c[N] = 0; // summe der zeilen
+	int sum_c[N] = { 0, 0, 0, 0, 0 }; // summe der zeilen
 
-	int sum_r[N] = 0; // summe der spalten
+	int sum_r[N] = { 0, 0, 0, 0, 0 }; // summe der spalten
 
-	for (int zeile = 0; zeile < N; zeile++) // Schleife für das iterieren innerhalb der Zeilen
+	int zeile, spalte;
+
+	for (zeile = 0; zeile < N; zeile++) // Schleife für das iterieren innerhalb der Zeilen
 	{
-		printf("Zeile %d eingeben: ", zeile);
-		scanf_s("%d", &matrix[zeile][0]); // Array Elemente einlesen 
-		sum_c[zeile] += matrix[zeile][0]; // nur elemente der jeweiligen zeile summieren, da auch die Summe aus mehreren elementen besteht ist auch sum_c ein array 
+		printf("Zeile %d eingeben: ", zeile + 1); 
+		scanf_s("%d", &matrix[zeile][zeile]); // Array Elemente einlesen 
+		sum_c[zeile] += matrix[zeile][zeile]; // nur elemente der jeweiligen zeile summieren, da auch die Summe aus mehreren elementen besteht ist auch sum_c ein array 
 
 		for (int spalte = 0; spalte < N; spalte++) // Schleife für das iterieren innerhalb der Spalten
 		{
 			sum_r[zeile] += matrix[zeile][spalte]; // Array Elemente summieren
 		}
-	}
 
-	printf(" Zeilen Summen: ");
+		printf("\n");
+	}	
 
-	for (int zeile = 0; zeile < N; zeile++)
+	printf("Zeilen Summen: ");
+
+	for (zeile = 0; zeile < N; zeile++)
 	{
-		printf(sum_c[zeile]);
+		printf("%d", sum_c[zeile]);
 	}
+
+	printf("\n"); 
+
+	printf("Spalten Summen: ");
+
+	for (zeile = 0; zeile < N; zeile++)
+	{
+		printf("%d", sum_c[zeile]);
+	}
+
+	printf("\n");
 
 	return 0;
-}
+} 
