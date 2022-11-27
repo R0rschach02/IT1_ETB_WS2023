@@ -2,55 +2,61 @@
 * Dateiname: Quelle8.c
 * Beschreibung: IT1 Uebungsblatt 8 Aufgabe 2
 * Autor: Igor Jovicic
-* Datum: 24.11.2022
+* Datum: 27.11.2022
 * Version: 1.0
 *****************************************************************/
 
 #include <stdio.h>	// Standard Eingabe/Ausgabe Funktionen
-#define N 5 // Verwendung von Macros 
+
 
 int main(void)
 {
 	
-	int matrix[N][N];
+	int matrix[5][5] = { 0 };	// Ein 5x5 Array mit 0 Initialisieren.
+	int summenzeilen[5] = { 0 }; // Ein Array mit 0 Initialisieren.
+	int summenspalten[5] = { 0 };
+	int zeilen, spalten, i, zeile_ausgabe = 1;  // Datentyp INT definieren.
 
-	int sum_c[N] = { 0, 0, 0, 0, 0 }; // summe der zeilen
+	for (zeilen = 0; zeilen < 5; zeilen++) // Nutzer Eingabe einlesen und Array ausfüllen.
+	{				
+		printf("Zeile %d eingeben: ", zeile_ausgabe++);		// Print funktion für neue Zeilen der Eingabe. 
 
-	int sum_r[N] = { 0, 0, 0, 0, 0 }; // summe der spalten
-
-	int zeile, spalte;
-
-	for (zeile = 0; zeile < N; zeile++) // Schleife für das iterieren innerhalb der Zeilen
-	{
-		printf("Zeile %d eingeben: ", zeile + 1); 
-		scanf_s("%d", &matrix[zeile][zeile]); // Array Elemente einlesen 
-		sum_c[zeile] += matrix[zeile][zeile]; // nur elemente der jeweiligen zeile summieren, da auch die Summe aus mehreren elementen besteht ist auch sum_c ein array 
-
-		for (int spalte = 0; spalte < N; spalte++) // Schleife für das iterieren innerhalb der Spalten
+		for (spalten = 0; spalten < 5; spalten++) 
 		{
-			sum_r[zeile] += matrix[zeile][spalte]; // Array Elemente summieren
+			scanf_s("%d", &matrix[zeilen][spalten]);
 		}
-
-		printf("\n");
-	}	
-
-	printf("Zeilen Summen: ");
-
-	for (zeile = 0; zeile < N; zeile++)
-	{
-		printf("%d", sum_c[zeile]);
 	}
 
-	printf("\n"); 
-
-	printf("Spalten Summen: ");
-
-	for (zeile = 0; zeile < N; zeile++)
-	{
-		printf("%d", sum_c[zeile]);
+	for (zeilen = 0; zeilen < 5; zeilen++) // Summe von Zeilen berechnen.
+	{					
+		for (spalten = 0; spalten < 5; spalten++) // Summe von Spalten berechnen.
+		{				
+			summenzeilen[zeilen] += matrix[zeilen][spalten];
+			summenspalten[spalten] += matrix[zeilen][spalten];
+		}
 	}
 
-	printf("\n");
+	printf("Zeilen Summen:");				// Zeilensumme Ausgeben
+
+	for (i = 0; i < 5; ++i) 
+	{
+		printf(" %d", summenzeilen[i]);
+		if (i == 4) 
+		{
+			printf("\n");
+		}
+	}
+
+	printf("Spalten Summen:");				// Spaltensumme Ausgeben
+
+	for (i = 0; i < 5; ++i) 
+	{
+		printf(" %d", summenspalten[i]);
+		if (i == 4) 
+		{
+			printf("\n");
+		}
+	}
 
 	return 0;
 } 
