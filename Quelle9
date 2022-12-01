@@ -1,0 +1,40 @@
+/****************************************************************
+* Dateiname: Quelle9.c
+* Beschreibung: IT1 Uebungsblatt 9 Aufgabe 3
+* Autor: Igor Jovicic
+* Datum: 01.12.2022
+* Version: 1.0
+*****************************************************************/
+
+#include <stdio.h>	// Standard Eingabe/Ausgabe Funktionen
+
+int expo;
+int expResult = 1; 
+
+int CalcExponent(int exponent)
+{
+
+	for (int i = 0; i < exponent; i++)
+	{
+		expResult *= exponent; 
+	}
+
+	return expResult; 
+}
+
+int PolynomFunktion(int basis)
+{
+	int ergebnis; 
+	ergebnis = 5 * (basis * basis * basis * basis * basis) + 2 * (basis * basis * basis * basis) - 5 * (basis * basis * basis) - (basis * basis) + 7 * basis - 6; 
+	return ergebnis; 
+}
+
+int main(void)
+{
+	printf("Bitte einen exponenten eingeben: \n");
+	scanf_s("%d", &expo);
+
+	printf("Ergebnis: %d", CalcExponent(expo));
+
+	return 0;
+}
