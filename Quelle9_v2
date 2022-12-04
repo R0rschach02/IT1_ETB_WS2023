@@ -1,0 +1,49 @@
+/****************************************************************
+* Dateiname: Quelle9.c
+* Beschreibung: IT1 Uebungsblatt 9 Aufgabe 3
+* Autor: Igor Jovicic
+* Datum: 01.12.2022
+* Version: 1.0
+*****************************************************************/
+
+#include <stdio.h>	// Standard Eingabe/Ausgabe Funktionen
+
+int expo;
+int base;
+
+int PowFunktion(int basis, int exponent) //Funktion um Potenzzahlen zu berechnen 
+{
+
+	for (int i = 0; i < exponent-1; i++)
+	{
+		basis *= base; 
+		//printf("%d \n", basis);
+	}
+
+	return basis;
+}
+
+int PolynomFunktion(int faktor)
+{
+	int ergebnis;
+
+	for (int stelle = 0; stelle <= faktor; stelle++)
+	{
+		ergebnis = 5 * PowFunktion( stelle, 3) + 2 * PowFunktion(stelle, 4) - 5 * PowFunktion(stelle, 3) - PowFunktion(stelle, 2) + 7 * stelle - 6;
+		printf("Polynom(%d) = %d \n", stelle, ergebnis);
+	}
+
+	//return ergebnis;
+}
+
+int main(void)
+{
+	//printf("Bitte eine Basis und einen exponenten eingeben: \n");
+	//scanf_s("%d %d", &base ,&expo);
+
+	//printf("Ergebnis: %d", powFunction(base, expo));
+
+	printf(PolynomFunktion(9));
+
+	return 0;
+}
