@@ -1,0 +1,37 @@
+/****************************************************************
+* Dateiname: Quelle9.c
+* Beschreibung: IT1 Uebungsblatt 9 Aufgabe 3
+* Autor: Igor Jovicic
+* Datum: 01.12.2022
+* Version: 1.0
+*****************************************************************/
+
+#include <stdio.h>	// Standard Eingabe/Ausgabe Funktionen
+
+long gesSekINPUT;
+
+void zeitAufteilen(long gesSek, int* stu, int* min, int* sek) 
+{
+	int stunde = *stu; 
+	int minute = *min; 
+	int sekunde = *sek; 
+
+	long stundenRest = gesSek % 3600; // 5000/3600 = 1 rest 1400
+
+	long stunden = gesSek / 3600; // stunden = 1 
+
+	long minuten = stundenRest / 60;  // 1400/60 = 23,3 -> auf 23 abrunden 
+
+	long sekunden = minuten / 60; // 23,3/60 = 0,388 -> auf 0,3 abrunden
+
+
+}
+
+
+
+int main(void)
+{
+	printf("Absolute Zeit in sekunden eingeben: \n");
+	scanf_s("%d", &gesSekINPUT);
+	printf("%d s entspricht");
+}
